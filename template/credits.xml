@@ -1,0 +1,5 @@
+<!-- This project is part of OSn. For the license, please see the top-level directory. -->
+
+<credits>
+	<contributor name="{{Author}}" github="{{AuthorGithub}}" email="{{AuthorEmail}}"/>
+</credits>

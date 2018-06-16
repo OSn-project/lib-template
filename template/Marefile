@@ -1,0 +1,26 @@
+lib_file = "{{LibFile}}.a"
+
+targets = {
+	lib = cppStaticLibrary + {
+		output = "$(lib_file)"
+		
+		buildDir = "."
+
+		files = {
+			"src/*.cpp" = cppSource + {cppFlags += "-isystem include/"}
+			"src/*.c"   = cSource   + {cppFlags += "-isystem include/"}
+		}
+	}
+	
+	tests = cppApplication + {
+		input  = {"tests/*.o", "src/*.o"}
+		output = "tests/tests"
+		buildDir = "."
+		
+		libs = {"UnitTest++"}
+		
+		files = {
+			"tests/*.cpp" = cppSource
+		}
+	}
+}
